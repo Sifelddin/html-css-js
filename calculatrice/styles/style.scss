@@ -1,0 +1,64 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, rgba(204, 71, 122, .6), rgba(16, 27, 170, .6));
+
+}
+
+.calc-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    min-height: 100vh;
+
+    .output {
+        grid-column: 1 / -1;
+        background: rgba(0, 0, 0, .7);
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: space-around;
+        color: white;
+        word-wrap: break-word;
+        word-break: break-all;
+        padding-right: 5px;
+
+        .current-oprand {
+            color: rgba(255, 255, 255, 1);
+            font-size: 2.5rem;
+        }
+
+        .last-oprand {
+            color: rgba(255, 255, 255, .7);
+            font-size: 1.5rem;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        font-size: 2rem;
+        border: 1px solid white;
+        outline: none;
+        background: rgba($color: #ffffff, $alpha: .7);
+
+        &:hover {
+            background: rgba($color: #ffffff, $alpha: 1);
+        }
+
+    }
+}
+
+
+button.twospan {
+    grid-column: span 2;
+}
