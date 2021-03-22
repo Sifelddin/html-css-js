@@ -150,7 +150,7 @@ prevBtn.addEventListener("click", function () {
     showAuthor(currentItem);
     flipColor()
 });
-
+//show author randomly
 randomBtn.addEventListener("click", function () {
 
 
@@ -168,7 +168,7 @@ const flipColor = () => {
         hexColor += hex[getRandomNumber()];
     }
 
-    if (hexColor != "#FFFFFF" && hexColor != "#FFF") {
+    if (hexColor != "#FFFFFF") {
         document.body.style.backgroundColor = hexColor;
         author.style.color = hexColor;
         authorProfession.style.color = hexColor;

@@ -12,6 +12,7 @@
 <body>
   <nav id="nav-bar">
     <h1>JS Documentation</h1>
+    <button class="btn"><i class="fa fa-bars"></i></button>
     <ul>
       <li><a href="#introduction">Introduction</a></li>
       <li>
@@ -116,7 +117,8 @@
         To get started with writing JavaScript, open the Scratchpad and write
         your first "Hello world" JavaScript code:
       </p>
-      <code>function greetMe(yourName) { alert("Hello " + yourName); }
+      <code>function greetMe(yourName){
+        alert("Hello " + yourName); }
         greetMe("World");</code>
       <p>
         Select the code in the pad and hit Ctrl+R to watch it unfold in your
@@ -177,13 +179,15 @@
         global context) within which x is declared, not the block, which in
         this case is an if statement.
       </p>
-      <code>if (true) { var x = 5; } console.log(x); // 5</code>
+      <code>if (true) { var x = 5; }
+        console.log(x); // 5</code>
       <p>
         This behavior changes, when using the let declaration introduced in
         ECMAScript 2015.
       </p>
-      <code>if (true) { let y = 5; } console.log(y); // ReferenceError: y is not
-        defined</code>
+      <code>if (true) { let y = 5; } console.log(y);
+        // ReferenceError: y is not defined</code>
+
     </section>
     <section id="Global Variables" class="main-section">
       <h1>Global variables</h1>
@@ -222,15 +226,18 @@
         You cannot declare a constant with the same name as a function or
         variable in the same scope. For example:
       </p>
-      <code>// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
-        WILLCAUSE AN ERROR ALSO functionf(){ const g = 5; var g; //statements
+      <code>// THIS WILL CAUSE AN ERRORs function f() {};
+        const f = 5; // THIS
+        WILLCAUSE AN ERROR ALSO functionf(){
+        const g = 5; var g; //statements
         }</code>
       <p>
         However, object attributes are not protected, so the following
         statement is executed without problems.
       </p>
-      <code>const MY_OBJECT = {"key": "value"}; MY_OBJECT.key =
-        "otherValue";</code>
+      <code>const MY_OBJECT = {"key": "value"};
+        MY_OBJECT.key = "otherValue";</code>
+
     </section>
     <section id="Data types" class="main-section">
       <h1>Data types</h1>
@@ -267,7 +274,8 @@
         true. Use the optional else clause to execute a statement if the
         condition is false. An if statement looks as follows:
       </p>
-      <code>if (condition) { statement_1; } else { statement_2; }</code>
+      <code>if (condition) { statement_1; }
+        else { statement_2; }</code>
       <p>
         condition can be any expression that evaluates to true or false. See
         Boolean for an explanation of what evaluates to true and false. If
@@ -279,9 +287,10 @@
         You may also compound the statements using else if to have multiple
         conditions tested in sequence, as follows:
       </p>
-      <code>if (condition_1) { statement_1; } else if (condition_2) {
-        statement_2; } else if (condition_n) { statement_n; } else {
-        statement_last; }</code>
+      <code>if (condition_1) { statement_1; }
+        else if (condition_2) { statement_2; }
+        else if (condition_n) { statement_n; }
+        else { statement_last; }</code>
       <p>
         In the case of multiple conditions only the first logical condition
         which evaluates to true will be executed. To execute multiple
@@ -289,10 +298,14 @@
         general, it's good practice to always use block statements, especially
         when nesting if statements:
       </p>
-      <code>if (condition) { statement_1_runs_if_condition_is_true;
-        statement_2_runs_if_condition_is_true; } else {
+      <code>
+        if (condition) {
+        statement_1_runs_if_condition_is_true;
+        statement_2_runs_if_condition_is_true; }
+        else {
         statement_3_runs_if_condition_is_false;
-        statement_4_runs_if_condition_is_false; }</code>
+        statement_4_runs_if_condition_is_false; }
+      </code>
       <p>
         It is advisable to not use simple assignments in a conditional
         expression, because the assignment can be confused with equality when
@@ -331,7 +344,8 @@
       <p>
         The following while loop iterates as long as n is less than three:
       </p>
-      <code>var n = 0; var x = 0; while (n < 3) { n++; x +=n; }</code> <p>
+      <code>var n = 0; var x = 0;
+        while (n < 3) { n++; x +=n; }</code> <p>
           With each iteration, the loop increments n and adds that value to x.
           Therefore, x and n take on the following values:
           </p>
@@ -362,7 +376,8 @@
         For example, the following code defines a simple function named
         square:
       </p>
-      <code>function square(number) { return number * number; }</code>
+      <code>function square(number)
+        { return number * number; }</code>
       <p>
         The function square takes one argument, called number. The function
         consists of one statement that says to return the argument of the

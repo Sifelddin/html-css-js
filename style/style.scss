@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
-
+$clr-grey-6: hsl(209, 23%, 60%);
 $transition: all 0.3s linear;
-$clr-black: #222;
+$clr-black: rgb(51, 51, 51);
 $dark-blue: rgb(20, 20, 121);
 $white: #ffffff;
 $main-red: #be3144;
@@ -29,10 +29,7 @@ body {
 }
 
 .nav-bar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+
   background: $main-red;
   display: flex;
   flex-direction: row-reverse;
@@ -76,6 +73,8 @@ body {
     margin-top: 0;
     font-size: 3rem;
     font-family: $font2;
+    padding-bottom: 1rem;
+    border-bottom: solid medium white;
   }
 
   p {
@@ -87,7 +86,7 @@ body {
 }
 
 .projects {
-  background: linear-gradient(#e66465, #9198e5);
+  background: rgba(158, 151, 221, 0.815);
 
   h1 {
     padding-top: 2rem;
@@ -153,16 +152,29 @@ body {
 .contact-section {
   display: grid;
   place-items: center;
-  height: 70vh;
+  grid-template-rows: 1fr 1fr 55%;
+  min-height: 60vh;
   background: $clr-black;
 
   h1 {
+    grid-row: 1;
     font-size: 2rem;
     font-family: $font2;
     letter-spacing: 2px;
+    padding-bottom: 1rem;
+    border-bottom: solid medium white;
+    margin-bottom: .5rem;
+  }
+
+  p {
+    margin-top: 0;
+    grid-row: 2;
+    color: $main-red;
+    font-size: 1.2rem;
   }
 
   .social-media {
+    grid-row: 3;
     display: flex;
     font-size: 1.3rem;
     padding: 0;
@@ -173,15 +185,19 @@ body {
     }
 
     a {
+      display: block;
       text-decoration: none;
       color: $white;
+      font-weight: 700;
       letter-spacing: 2px;
+      transition: $transition;
 
       &:hover {
 
-        color: grey;
+        color: lightgrey;
         text-decoration: underline;
         transition: $transition;
+        transform: translate(0, -20%);
       }
     }
   }
@@ -276,6 +292,11 @@ body {
   .social-media {
     li {
       margin: .5;
+
+      &:last-child {
+        grid-column: span 2;
+
+      }
     }
 
     a {
@@ -292,7 +313,7 @@ body {
   }
 }
 
-@media only screen and(max-width:725px) {
+@media only screen and(max-width:730px) {
   .welcome-section h1 {
     font-size: 2.5rem;
   }
@@ -316,9 +337,17 @@ body {
     }
   }
 
-  .social-media {
-    display: flex;
-    flex-direction: column;
+  .contact-section .social-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    align-content: center;
+    justify-items: center;
+  }
+
+  ul li:last-child {
+    color: blue;
   }
 }
 
@@ -332,6 +361,12 @@ body {
         margin: 0;
         padding: .5rem 0;
       }
+    }
+  }
+
+  .welcome-section {
+    h1 {
+      border: none;
     }
   }
 
